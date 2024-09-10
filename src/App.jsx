@@ -1,35 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [characters, setCharacters] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  useEffect(() => {
+    axios.get('https://rickandmortyapi.com/api/character')
+      .then(response => setCharacters(response.data.results))
+      .catch(error => console.log(error));
+  }, []);
+
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const filteredCharacters = characters.filter(character =>
+    character.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
-    <>
+    <div>
+      <input
+        type="text"
+        placeholder="Buscar personajes"
+        value={searchTerm}
+        onChange={handleSearch}
+      />
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        {filteredCharacters.map(character => (
+          <div key={character.id}>
+            <h2>{character.name}</h2>
+            <img src={character.image} alt={character.name} />
+          </div>
+        ))}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    </div>
+  );
+};
 
-export default App
+export default App;
+
+
+sta
