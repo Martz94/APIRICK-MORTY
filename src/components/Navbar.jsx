@@ -17,3 +17,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+// navegacion de inicio y pagina de favoritos con react-router

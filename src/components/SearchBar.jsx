@@ -15,3 +15,5 @@ const SearchBar = ({ searchTerm, setSearchTerm }) => {
 };
 
 export default SearchBar;
+
+// barra de busqueda de los personajes

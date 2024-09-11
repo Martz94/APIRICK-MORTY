@@ -37,3 +37,4 @@ const CharacterDetail = () => {
 
 export default CharacterDetail;
 
+/* tarjeta de los personajes a detalle y boton de agregar a favoritos con context y fech para obtener los personajes. */

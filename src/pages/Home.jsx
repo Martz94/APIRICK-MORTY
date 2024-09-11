@@ -12,7 +12,7 @@ const Home = () => {
       const data = await response.json();
       setCharacters(data.results || []);
     };
-
+  
     fetchCharacters();
   }, [searchTerm]);
 
@@ -31,3 +31,4 @@ const Home = () => {
 
 export default Home;
 
+// pagina principal donde se pintan el listado de los personajes de API con fetch.

@@ -15,3 +15,4 @@ const CharacterCard = ({ character }) => {
 
 export default CharacterCard;
 
+// creacion de las tarjetas de los personajes y aplicando react-router para ver pagina de detalle.

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { FavoritesContext } from '../context/FavoritesContext';
 
 const Favorites = () => {
-  const { favorites, removeFavorite } = useContext(FavoritesContext);
+const { favorites, removeFavorite } = useContext(FavoritesContext);
 
   if (favorites.length === 0) {
     return <h3 className='fav-text'>No hay favoritos</h3>;
@@ -25,3 +25,5 @@ const Favorites = () => {
 };
 
 export default Favorites;
+
+// creando componente de favoritos, donde se pintara en la tarjeta

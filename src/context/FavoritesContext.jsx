@@ -1,7 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
 
 export const FavoritesContext = createContext();
-
 export const FavoritesProvider = ({ children }) => {
   const [favorites, setFavorites] = useState([]);
   const MAX_FAVORITES = 5; 
@@ -10,7 +9,6 @@ export const FavoritesProvider = ({ children }) => {
     const storedFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
     setFavorites(storedFavorites);
   }, []);
-
 
   useEffect(() => {
     localStorage.setItem('favorites', JSON.stringify(favorites));
@@ -27,9 +25,7 @@ export const FavoritesProvider = ({ children }) => {
       updatedFavorites.shift();
     }
 
-
     updatedFavorites = [...updatedFavorites, character];
-
 
     setFavorites(updatedFavorites);
   };
@@ -45,3 +41,5 @@ export const FavoritesProvider = ({ children }) => {
     </FavoritesContext.Provider>
   );
 };
+
+// creacion del 'context' para manejas los personajes favoritos y manejo de las persistencia.
