@@ -1,45 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import CharacterDetail from "./pages/CharacterDetail";
+import { FavoritesProvider } from "./context/FavoritesContext";
+import Favorites from "./components/Favorites"; 
+
+import './App.css';
 
 const App = () => {
-  const [characters, setCharacters] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
-
-  useEffect(() => {
-    axios.get('https://rickandmortyapi.com/api/character')
-      .then(response => setCharacters(response.data.results))
-      .catch(error => console.log(error));
-  }, []);
-
-  const handleSearch = (e) => {
-    setSearchTerm(e.target.value);
-  };
-
-  const filteredCharacters = characters.filter(character =>
-    character.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
   return (
-    <div>
-      <input
-        type="text"
-        placeholder="Buscar personajes"
-        value={searchTerm}
-        onChange={handleSearch}
-      />
-      <div>
-        {filteredCharacters.map(character => (
-          <div key={character.id}>
-            <h2>{character.name}</h2>
-            <img src={character.image} alt={character.name} />
-          </div>
-        ))}
-      </div>
-    </div>
+    <FavoritesProvider>
+      <Router>
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/character/:id" element={<CharacterDetail />} />
+          <Route path="/favorites" element={<Favorites />} />
+        </Routes>
+      </Router>
+    </FavoritesProvider>
   );
 };
 
 export default App;
 
 
-sta
