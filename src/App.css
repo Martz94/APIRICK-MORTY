@@ -1,0 +1,99 @@
+.App {
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    font-family: 'lato', sans-serif;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .card-detail{
+    margin-top: 10rem;
+    margin-bottom: 5rem;
+    box-shadow: darkgrey;
+  }
+  
+  .character-item, .favorite-item {
+    text-align: center;
+    justify-content: center;
+    background-color: white;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(255, 254, 254, 0.552);
+  }
+  
+  .character-item img, .favorite-item img {
+    width: 150px;
+    border-radius: 50%;
+  }
+  
+  
+  .search-bar {
+    background-color: whitesmoke;
+    color: grey;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 5rem;
+    margin-left: 1rem;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0667ce;
+  }
+  
+  .titulo-1 {
+    color: black;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .navbar{
+    color: darkblue;
+    justify-content: center;
+    display: flex;
+    width: auto;
+    position: fixed;
+    background-color: #f4f2f2;
+    width: auto;
+    top: 0;
+    right: 0;
+    left: 0;
+  }
+  
+  .navbar-link{
+    display: flex;
+    gap: 3rem;
+    font-weight: bolder;
+    list-style: none;
+  }
+  
+  .container{
+    margin-top: 8rem;
+  }
+  
+  .fav-text{
+    margin-top: 8rem;
+    color: darkslategray;
+    margin-left: 2rem;
+    margin-bottom: 5rem;
+  }
+  
+  .card-fav{
+  margin-bottom: 5rem;
+  list-style: none;
+  }
